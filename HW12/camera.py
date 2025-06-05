@@ -1,4 +1,4 @@
-import pgzrun
+import pgzrun # pip install pgzero
 
 import serial
 ser = serial.Serial('/dev/tty.usbmodem14401') # the name of your port here

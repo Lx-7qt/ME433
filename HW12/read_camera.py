@@ -36,7 +36,8 @@ while not has_quit:
             reds[row][col] = r
             greens[row][col] = g
             blues[row][col] = b
-            #print(i)
+            print(i)
+            #print(str(i)+" "+str(r)+ " "+ str(g) + " " +str(b))
 
         # Stack arrays to form an RGB image
         rgb_array = np.stack((reds, greens, blues), axis=-1)
