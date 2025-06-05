@@ -207,7 +207,7 @@
      /*******************************************************
       * Part 1: Benchmark FPU operations
       *******************************************************/
-     benchmark_fpu();
+     //benchmark_fpu();
      // Pause briefly so user can see text before DAC begins toggling
      sleep_ms(1000);
  
@@ -256,7 +256,7 @@
          if (sample_v < 0.0f) sample_v = 0.0f;
          if (sample_v > 3.3f) sample_v = 3.3f;
          uint16_t code10 = (uint16_t)((sample_v / 3.3f) * 1023.0f + 0.5f);
- 
+        printf("%u",code10);
          // Output via MCP4912 on channel A (channel=0)
          dac_write(0, code10);
  
@@ -264,7 +264,7 @@
          read_index = (read_index + 1) % NUM_SAMPLES;
  
          // 1 ms delay → drives 1000 samples into one second = 1 Hz sine
-         sleep_us(SAMPLE_DELAY_US);
+         sleep_us(1000);
      }
  
      return 0;
